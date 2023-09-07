@@ -6,4 +6,19 @@
     <select id="sampleList" resultType="kr.co.teaspoon.dto.Sample">
         select * from sample
     </select>
+    <select id="sampleDetail" resultType="kr.co.teaspoon.dto.Sample">
+        select * from sample where no=#{no}
+    </select>
+    <select id="sampleCount" resultType="integer">
+        select count(*) from sample
+    </select>
+    <insert id="sampleInsert">
+        insert into sample values (default, #{name})
+    </insert>
+    <update id="sampleUpdate">
+        update sample set name=#{name} where no=#{no}
+    </update>
+    <delete id="sampleDelete">
+        delete from sample where no=#{no}
+    </delete>
 </mapper>
