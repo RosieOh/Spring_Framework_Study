@@ -29,6 +29,10 @@
         <level value="info" />
     </logger>
 
+    <logger name="kr.co.teaspoon.test">
+        <level value="info" />
+    </logger>
+
     <logger name="org.springframework.core">
         <level value="info" />
     </logger>
