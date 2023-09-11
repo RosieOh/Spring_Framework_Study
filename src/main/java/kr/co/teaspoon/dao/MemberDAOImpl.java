@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public class MemberDAOImpl implements MemberDAO{
+
     @Autowired
     private SqlSession sqlSession;
 
@@ -48,12 +49,12 @@ public class MemberDAOImpl implements MemberDAO{
     }
 
     @Override
-    public Member LoginCheck(String id) throws Exception {
+    public Member loginCheck(String id) throws Exception {
         return sqlSession.selectOne("member.loginCheck", id);
     }
 
     @Override
-    public Member Login(String id) throws Exception {
+    public Member login(String id) throws Exception {
         return sqlSession.selectOne("member.login", id);
     }
 }
