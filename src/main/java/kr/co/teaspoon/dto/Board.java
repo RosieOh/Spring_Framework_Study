@@ -9,5 +9,5 @@ public class Board {
     private String content;
     private String nickname;
     private String regdate;
-    private int visted;
+    private int visited;
 }
