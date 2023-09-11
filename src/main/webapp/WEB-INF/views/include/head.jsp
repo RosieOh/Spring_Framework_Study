@@ -17,6 +17,7 @@
 <script src="${path1}/resources/js/jquery-3.7.1.js"></script>
 <link rel="stylesheet" href="${path1}/resources/css/normalize.css">
 <link rel="stylesheet" href="${path1}/resources/css/bulma.css">
+<link rel="stylesheet" href="${path1}/resources/css/bulma-rtl.css">
 
 <!--스타일 초기화-->
 <link href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css" rel="stylesheet">
