@@ -2,8 +2,8 @@ package kr.co.teaspoon.service;
 
 import kr.co.teaspoon.dao.MemberDAO;
 import kr.co.teaspoon.dto.Member;
-import kr.co.teaspoon.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,6 +13,8 @@ public class MemberServiceImpl implements MemberService {
 
     @Autowired
     private MemberDAO memberDAO;
+
+    BCryptPasswordEncoder pwEncoder = new BCryptPasswordEncoder();
 
     @Override
     public List<Member> memberList() throws Exception {
@@ -44,25 +46,29 @@ public class MemberServiceImpl implements MemberService {
         memberDAO.memberDelete(id);
     }
 
+    //로그인을 컨트롤러에서 처리
     @Override
     public Member signIn(String id) throws Exception {
         return memberDAO.signIn(id);
     }
 
+    //서비스에서 로그인 처리
     @Override
     public boolean loginCheck(String id, String pw) throws Exception {
-        // 회원 정보를 가져옴
-        Member member = memberDAO.getMember(id);
-
-        // 회원 정보가 존재하고 비밀번호가 일치하면 true 반환
-        if (member != null && pw.equals(member.getPw())) {
-            return true;
+        boolean comp = false;
+        Member member = memberDAO.loginCheck(id);
+        boolean loginSuccess = pwEncoder.matches(pw, member.getPw());
+        if(member!=null && loginSuccess){
+            comp = true;
+        } else {
+            comp = false;
         }
-        return false; // 그 외의 경우는 false 반환
+        return comp;
     }
 
+    //Ajax로 로그인 처리 -> 컨트롤러
     @Override
-    public Member login(String id) throws Exception {
-        return memberDAO.login(id);
+    public Member loginAjax(Member member) throws Exception {
+        return memberDAO.loginAjax(member);
     }
 }

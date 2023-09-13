@@ -1,7 +1,5 @@
 package kr.co.teaspoon.dto;
-
 import lombok.*;
-
 @Setter
 @Getter
 @ToString

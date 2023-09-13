@@ -23,7 +23,9 @@
     <resources mapping="/qna/**" location="/WEB-INF/views/qna" />
     <resources mapping="/reservation/**" location="/WEB-INF/views/reservation" />
     <resources mapping="/util/**" location="/WEB-INF/views/util" />
-    <resources mapping="/util/**" location="/WEB-INF/views/sample" />
+    <resources mapping="/sample/**" location="/WEB-INF/views/sample" />
+    <resources mapping="/sample2/**" location="/WEB-INF/views/sample2" />
+    <resources mapping="/test/**" location="/WEB-INF/views/test" />
 
     <!-- 컨트롤러에서 던진 URL : /notice/noticeList -->
     <!-- 실제 존재하는 URL : /WEB-INF/views/notice/noticeList.jsp -->
@@ -39,31 +41,28 @@
         <beans:property name="maxUploadSize" value="10485760" />
     </beans:bean>
 
+    <!-- 멀티파트 업로드 디렉토리 지정 -->
+    <beans:bean id="uploadPath" class="java.lang.String">
+        <beans:constructor-arg value="D:\kim\spring1\pro31\src\main\webapp\resources\upload" />
+    </beans:bean>
+
     <!-- 기본 메인 패키지 및 컨트롤러 패키지 설정 -->
     <context:component-scan base-package="kr.co.teaspoon.controller" />
     <annotation-driven />
 
-    <!-- 멀티파트 업로드 디렉토리 지정 -->
-    <beans:bean id="uploadPath" class="java.lang.String">
-        <beans:constructor-arg value="D:\oth\spring\pro03\src\main\webapp\resources\upload" />
-    </beans:bean>
-
-    <!-- 기본 메인 패키지 및 컨트롤러 패키지 설정 -->
-    <context:component-scan base-package="kr.co.teaspoon" />
-
     <!-- 인터셉터 : 글쓰기와 같은 회원권한을 가진 경우는 반드시 로그인 페이지를 거쳐서 시도할 것  -->
-<!--    <beans:bean id="sampleIntercepter" class="kr.co.teaspoon.util.SampleInterceptor" />-->
-<!--    <beans:bean id="adminIntercepter" class="kr.co.teaspoon.util.AdminInterceptor" />-->
-<!--    <interceptors>-->
-<!--        <interceptor>-->
-<!--            <mapping path="/free/**"/>-->
-<!--            <beans:ref bean="sampleIntercepter" />-->
-<!--        </interceptor>-->
-<!--        <interceptor>-->
-<!--            <mapping path="/admin/**"/>-->
-<!--            <beans:ref bean="adminIntercepter" />-->
-<!--        </interceptor>-->
-<!--    </interceptors>-->
+    <!-- <beans:bean id="sampleIntercepter" class="kr.co.teaspoon.util.SampleInterceptor" />
+    <beans:bean id="adminIntercepter" class="kr.co.teaspoon.util.AdminInterceptor" />
+    <interceptors>
+        <interceptor>
+            <mapping path="/free/**"/>
+            <beans:ref bean="sampleIntercepter" />
+        </interceptor>
+        <interceptor>
+            <mapping path="/admin/**"/>
+            <beans:ref bean="adminIntercepter" />
+        </interceptor>
+    </interceptors> -->
     <!-- free 디렉토리의 view(.jsp)를 접근하려면 SampleInterceptor 클래스에
     제시한 조건이 맞으면 접근 가능하게 할 수 있도록 함 -->
     <!-- admin 디렉토리의 view(.jsp)를 접근하려면 AdminInterceptor 클래스에

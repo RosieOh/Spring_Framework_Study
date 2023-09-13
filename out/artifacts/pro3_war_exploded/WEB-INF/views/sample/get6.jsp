@@ -7,7 +7,7 @@
     <title>RequestMapping.GET : PathVariable+model</title>
 </head>
 <body>
-<p>id : ${id }</p>
-<p>pw : ${pw }</p>
+    <p>id : ${id }</p>
+    <p>pw : ${pw }</p>
 </body>
 </html>

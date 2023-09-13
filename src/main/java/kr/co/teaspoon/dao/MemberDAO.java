@@ -9,9 +9,9 @@ public interface MemberDAO {
     public Member getMember(String id) throws Exception;
     public int memberCount() throws Exception;
     public void memberInsert(Member member) throws Exception;
-    public void memberEdit(Member member) throws  Exception;
+    public void memberEdit(Member member) throws Exception;
     public void memberDelete(String id) throws Exception;
     public Member signIn(String id) throws Exception;
     public Member loginCheck(String id) throws Exception;
-    public Member login(String id) throws Exception;
+    public Member loginAjax(Member member) throws Exception;
 }

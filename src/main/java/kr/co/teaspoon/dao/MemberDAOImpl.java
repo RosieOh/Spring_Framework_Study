@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class MemberDAOImpl implements MemberDAO{
-
+public class MemberDAOImpl implements MemberDAO {
     @Autowired
     private SqlSession sqlSession;
 
@@ -43,18 +42,21 @@ public class MemberDAOImpl implements MemberDAO{
         sqlSession.delete("member.memberDelete", id);
     }
 
+    //로그인을 컨트롤러에서 처리
     @Override
     public Member signIn(String id) throws Exception {
         return sqlSession.selectOne("member.signIn", id);
     }
 
+    //서비스에서 로그인 처리
     @Override
     public Member loginCheck(String id) throws Exception {
         return sqlSession.selectOne("member.loginCheck", id);
     }
 
+    //Ajax로 로그인 처리
     @Override
-    public Member login(String id) throws Exception {
-        return sqlSession.selectOne("member.login", id);
+    public Member loginAjax(Member member) throws Exception {
+        return sqlSession.selectOne("member.login", member);
     }
 }

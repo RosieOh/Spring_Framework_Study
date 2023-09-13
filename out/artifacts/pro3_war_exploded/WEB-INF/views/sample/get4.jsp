@@ -7,7 +7,7 @@
     <title>RequestMapping.GET : dto+model</title>
 </head>
 <body>
-<p>id : ${member.id }</p>
-<p>pw : ${member.pw }</p>
+    <p>id : ${member.id }</p>
+    <p>pw : ${member.pw }</p>
 </body>
 </html>

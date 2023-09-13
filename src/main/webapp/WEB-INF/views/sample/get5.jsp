@@ -7,7 +7,7 @@
     <title>RequestMapping.GET : ModelAttribute+model</title>
 </head>
 <body>
-<p>id : ${mem.id }</p>
-<p>pw : ${mem.pw }</p>
+    <p>id : ${mem.id }</p>
+    <p>pw : ${mem.pw }</p>
 </body>
 </html>

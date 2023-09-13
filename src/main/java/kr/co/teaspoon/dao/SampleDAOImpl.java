@@ -1,10 +1,14 @@
 package kr.co.teaspoon.dao;
 
 import kr.co.teaspoon.dto.Sample;
+
+import lombok.Setter;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.List;
 
 @Repository
@@ -21,11 +25,6 @@ public class SampleDAOImpl implements SampleDAO {
     @Override
     public Sample sampleDetail(int no) throws Exception {
         return sqlSession.selectOne("sample.sampleDetail", no);
-    }
-
-    @Override
-    public int sampleCount() throws Exception {
-        return sqlSession.selectOne("sample.sampleCount");
     }
 
     @Override

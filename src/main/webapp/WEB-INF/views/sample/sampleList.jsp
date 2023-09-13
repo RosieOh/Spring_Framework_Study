@@ -11,13 +11,18 @@
 </head>
 <body>
     <h2>샘플 목록</h2>
+    <c:if test="${!empty sampleList}">
     <ul>
         <c:forEach items="${sampleList }" var="sample">
-            <li>
-                <span>번호 : ${sample.no}</span>
-                <span></span>
-            </li>
+        <li>
+            <span>번호 : ${sample.no }</span><br>
+            <span>이름 : ${sample.name }</span><hr>
+        </li>
         </c:forEach>
     </ul>
+    </c:if>
+    <c:if test="${empty sampleList}">
+        <p>해당 목록이 존재하지 않습니다.</p>
+    </c:if>
 </body>
 </html>

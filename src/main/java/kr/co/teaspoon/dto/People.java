@@ -2,8 +2,8 @@ package kr.co.teaspoon.dto;
 
 import lombok.*;
 
-@Getter
 @Setter
+@Getter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
