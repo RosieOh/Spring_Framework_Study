@@ -1,7 +1,6 @@
 package kr.co.teaspoon.dao;
 
 import kr.co.teaspoon.dto.Free;
-
 import java.util.List;
 
 public interface FreeDAO {

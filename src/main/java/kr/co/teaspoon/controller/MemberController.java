@@ -149,17 +149,21 @@ public class MemberController {
         return "redirect:/";
     }
     //Ajax를 이용하는 로그인 방법
-    @RequestMapping(value = "loginCheck.do", method = RequestMethod.POST)
-    public String memberLoginCtrl(Member mdto, RedirectAttributes rttr, HttpServletRequest request) throws Exception {
-        session.getAttribute("member");
+    @RequestMapping(value="loginCheck.do", method = RequestMethod.POST)
+    public String memberLoginCtrl(@RequestParam String id, @RequestParam String pw, HttpServletRequest request, RedirectAttributes rttr) throws Exception {
+        //session.getAttribute("member");
+        Member mdto = new Member();
+        mdto.setId(id);
+        mdto.setPw(pw);
         Member member = memberService.loginAjax(mdto);
         boolean mat = pwEncoder.matches(mdto.getPw(), member.getPw());
-        if (member != null && mat) {
+        if(member!=null && mat) {
             session.setAttribute("member", member);
             session.setAttribute("sid", member.getId());
             rttr.addFlashAttribute("msg", "로그인 성공");
             String referer = request.getHeader("Referer");
-            return "redirect:" + referer;
+            return "redirect:"+referer;
+            //return "redirect:/";
         } else {
             session.setAttribute("member", null);
             rttr.addFlashAttribute("msg", "로그인 실패");
