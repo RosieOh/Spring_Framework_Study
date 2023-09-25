@@ -888,13 +888,9 @@ D:\kim\springStudy\study2\src\main\resources 디렉토리에서 마우스 오른
     </beans:bean>
 
     <!-- 기본 메인 패키지 및 컨트롤러 패키지 설정 -->
-    <context:component-scan base-package="kr.co.teaspoon.controller" />
+    <context:component-scan base-package="kr.ed.haebeop.controller" />
     <annotation-driven />
 
-    <beans:bean id="fileDownLoadView" class="kr.co.teaspoon.controller.FileDownLoadView"/>
-    <beans:bean id="fileViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
-        <beans:property name="order" value="0" />
-    </beans:bean>
 
     <!-- 인터셉터 : 글쓰기와 같은 회원권한을 가진 경우는 반드시 로그인 페이지를 거쳐서 시도할 것  -->
     <!-- <beans:bean id="sampleIntercepter" class="kr.co.teaspoon.util.SampleInterceptor" />

@@ -37,10 +37,6 @@
         <level value="info" />
     </logger>
 
-    <logger name="kr.ed.haebeop.config">
-        <level value="info" />
-    </logger>
-
     <logger name="kr.ed.haebeop">
         <level value="info" />
     </logger>
