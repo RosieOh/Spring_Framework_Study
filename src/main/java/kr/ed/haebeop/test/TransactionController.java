@@ -1,5 +1,4 @@
-package kr.ed.haebeop.test.transaction;
-
+package kr.ed.haebeop.test;
 import kr.ed.haebeop.domain.Emp;
 import kr.ed.haebeop.domain.TestVO;
 import kr.ed.haebeop.domain.TransVO;
@@ -16,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class TransactionController {
 
     @Autowired
-    private TransactionService tranService;
+    private kr.ed.haebeop.test.transaction.TransactionService tranService;
     //<a href="/transaction/addCollection">TEST+EMP 추가</a1>
     //http:localhost:8084/study2_war/transaction/addCollection
     //http:localhost:8084/study2_war/test/addCollection.jsp
