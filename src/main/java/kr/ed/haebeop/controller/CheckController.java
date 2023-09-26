@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+
 
 @Controller
 @RequestMapping("/check/")
@@ -14,10 +16,23 @@ public class CheckController {
     public String check1(Model model) {
         return "/check/check1";
     }
+
     @PostMapping("check1")  // http://localhost:8084/check/check1 POST
-    public String checkPro(@RequestParam String id, @RequestParam String pw, Model model) {
+    public String check1Pro(@RequestParam String id, @RequestParam String pw, Model model) {
         model.addAttribute("id", id);
         model.addAttribute("pw", pw);
         return "/check/check1_result";
+    }
+
+    @GetMapping("check2")   // http://localhost:8084/check/check1
+    public String check2(Model model) {
+        return "/check/check1";
+    }
+
+    @PostMapping("check2")  // http://localhost:8084/check/check1 POST
+    public String check2Pro(HttpServletRequest req, Model model) {
+        model.addAttribute("id", req.getParameter("id"));
+        model.addAttribute("pw", req.getParameter("pw"));
+        return "/check/check2_result";
     }
 }

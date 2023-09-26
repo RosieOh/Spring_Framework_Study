@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>폼 요소에서 유효성 검사 - check2.jsp</title>
+    <title>자바스크립트에서의 유효성 검사 - check2.jsp</title>
 </head>
 <body>
 <div class="container">
@@ -34,7 +34,13 @@
             // circumflex(써큠플렉스) = ^ = 위 꺾쇠
             var idReg = /^[a-z0-9]{5, 12}$/g;   // 정규표현식(유효성 검증식)
             if(idReg.test(id)){
-                alert("아이디 입력 형식이 맞지 않습니다.")
+                alert("아이디 입력 형식이 맞지 않습니다.");
+                return;
+            }
+            var pwReg = /^[a-zA-z0-9]{8, 12}$/g;
+            if(!pwReg.test(pw)) {
+                alert("비밀번호 입력 형식이 맞지 않습니다.");
+                return;
             }
         }
     </script>
