@@ -269,10 +269,11 @@ https://www.jetbrains.com/ko-kr/idea/download/?section=windows
 ## 02-1. 의존성 설정
 
 D:\kim\springStudy\study2\pom.xml 설정
+-- 오류 있어서 수정했어요!!!!!!!
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.study2</groupId>
   <artifactId>study2</artifactId>
@@ -297,15 +298,24 @@ D:\kim\springStudy\study2\pom.xml 설정
         </exclusion>
       </exclusions>
     </dependency>
+
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>${org.springframework-version}</version>
     </dependency>
+
+    <!-- aspectj -->
     <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjrt</artifactId>
       <version>1.9.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>${org.springframework-version}</version>
     </dependency>
 
     <!-- slf4j and log4j -->
@@ -351,14 +361,14 @@ D:\kim\springStudy\study2\pom.xml 설정
       <scope>runtime</scope>
     </dependency>
 
-    <!-- 의존성 주입 라이브러리 - @Inject -->
+    <!-- 의존성 주입 라이브러리 -->
     <dependency>
       <groupId>javax.inject</groupId>
       <artifactId>javax.inject</artifactId>
       <version>1</version>
     </dependency>
 
-    <!-- 서블릿(servlet-api 2.5, jsp-api 2.1, jstl 1.2) -->
+    <!-- 서블릿(servlet-api 2.5, jsp-api 2.1, jstl 1.2)-->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
@@ -377,62 +387,64 @@ D:\kim\springStudy\study2\pom.xml 설정
       <version>1.2</version>
     </dependency>
 
-    <!-- 테스트 도구(junit 4.13, spring-test 5.3.20)   -->
+    <!-- 단위 및 목업 테스트 도구 - junit 4.13 -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.13</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- 스프링 테스트 도구 - spring-test : 스프링mvc 버전과 동일 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
       <version>${org.springframework-version}</version>
     </dependency>
 
-    <!-- maven build tool(3.2.1) -->
     <dependency>
       <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-archetype-plugin</artifactId>
-      <version>3.2.1</version>
+      <artifactId>maven-war-plugin</artifactId>
+      <version>3.2.0</version>
     </dependency>
 
-    <!-- lombok(1.18.22)-->
+    <!-- lombok - 1.18.22 -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.22</version>
+      <scope>provided</scope>
     </dependency>
 
-    <!-- DB 로그(log4jdbc-log4j2 1.16) -->
+    <!-- DB 접속 로그를 기록하는 라이브러리 - log4jdbc-log4j2-jdbc4 1.16 -->
     <dependency>
       <groupId>org.bgee.log4jdbc-log4j2</groupId>
-      <artifactId>log4jdbc-log4j2</artifactId>
+      <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
       <version>1.16</version>
     </dependency>
 
-    <!-- 스프링 jdbc(5.3.20)-->
+    <!-- 스프링 jdbc 라이브러리 - spring-jdbc 스프링mvc 버전과 동일 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
       <version>${org.springframework-version}</version>
     </dependency>
 
-    <!-- DBMS Common Library(1.4) -->
+    <!-- 데이터베이스 공용 연결 라이브러리 - commons-dbcp 1.4 -->
     <dependency>
       <groupId>commons-dbcp</groupId>
       <artifactId>commons-dbcp</artifactId>
       <version>1.4</version>
     </dependency>
 
-    <!-- 마리아DB 연결 라이브러리(3.1.4) -->
+    <!-- 마리아 DB 연결 라이브러리 - mariadb-java-client : 마리아DB 버전과 호환되는 것 -->
     <dependency>
       <groupId>org.mariadb.jdbc</groupId>
       <artifactId>mariadb-java-client</artifactId>
       <version>3.1.4</version>
     </dependency>
 
-    <!-- 스프링 트랜잭션 도구(5.3.20) -->
+    <!-- 스프링 트랜잭션 라이브러리 - spring-tx 스프링mvc 버전과 동일 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
@@ -452,6 +464,7 @@ D:\kim\springStudy\study2\pom.xml 설정
       <artifactId>mybatis-spring</artifactId>
       <version>1.3.2</version>
     </dependency>
+
 
     <!-- 구글 JSON : gson 2.7 -->
     <dependency>
