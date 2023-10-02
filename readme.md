@@ -269,7 +269,8 @@ https://www.jetbrains.com/ko-kr/idea/download/?section=windows
 ## 02-1. 의존성 설정
 
 D:\kim\springStudy\study2\pom.xml 설정
--- 오류 있어서 수정했어요!!!!!!!
+
+<b>오류 있어서 수정했어요!!!!!!!<b>
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
