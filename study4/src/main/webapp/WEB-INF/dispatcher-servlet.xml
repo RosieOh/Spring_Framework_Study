@@ -49,6 +49,8 @@
 
     <!-- 기본 메인 패키지 및 컨트롤러 패키지 설정 -->
     <context:component-scan base-package="kr.ed.haebeop.controller" />
+    <context:component-scan base-package="kr.ed.haebeop.test.transaction" />
+    <context:component-scan base-package="kr.ed.haebeop.test.aop" />
     <annotation-driven />
 
 

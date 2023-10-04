@@ -1,18 +1,15 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Springframework Validator Result</title>
+    <title>Validate result</title>
 </head>
 <body>
-    <h2>check4 결과</h2>
-    <hr>
-    <p>id : ${check.id}</p>
-    <p>pw : ${check.pw}</p>
+<h2> check4 결과 </h2>
+<hr>
+<p> ${check.id} </p>
+<p> ${check.pw} </p>
 </body>
 </html>

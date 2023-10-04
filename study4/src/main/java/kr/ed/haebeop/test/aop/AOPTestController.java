@@ -27,6 +27,7 @@ public class AOPTestController {
     @DeleteMapping("delete")
     public String delete() throws InterruptedException {
         Thread.sleep(1000 * 2);
+        System.out.println("---------------- @DeleteMapping ---------------");
         return "delete";
     }
 }

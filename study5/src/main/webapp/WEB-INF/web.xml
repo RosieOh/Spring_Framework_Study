@@ -53,5 +53,4 @@
     <error-code>400</error-code>
     <location>/WEB-INF/views/check/error5.jsp</location>
   </error-page>
-
 </web-app>

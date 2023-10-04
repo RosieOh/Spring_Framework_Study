@@ -4,7 +4,6 @@ import kr.ed.haebeop.repository.TestRepository;
 import kr.ed.haebeop.repository.TestRepositoryImpl;
 import kr.ed.haebeop.service.TestService;
 import kr.ed.haebeop.service.TestServiceImpl;
-import kr.ed.haebeop.test.CheckVO;
 import kr.ed.haebeop.test.transaction.TransactionRepository;
 import kr.ed.haebeop.test.transaction.TransactionService;
 import org.springframework.context.annotation.Bean;
@@ -30,8 +29,4 @@ public class ApplicationConfig {
 
     @Bean
     public TransactionService tranService() { return new TransactionService(); }
-
-    @Bean
-    public CheckVO chk1() { return new CheckVO(); }
-
 }
