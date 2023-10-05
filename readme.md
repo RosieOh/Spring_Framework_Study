@@ -270,11 +270,9 @@ https://www.jetbrains.com/ko-kr/idea/download/?section=windows
 
 D:\kim\springStudy\study2\pom.xml 설정
 
-<b>오류 있어서 수정했어요!!!!!!!<b>
-
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.study2</groupId>
   <artifactId>study2</artifactId>
@@ -299,24 +297,15 @@ D:\kim\springStudy\study2\pom.xml 설정
         </exclusion>
       </exclusions>
     </dependency>
-
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>${org.springframework-version}</version>
     </dependency>
-
-    <!-- aspectj -->
     <dependency>
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjrt</artifactId>
       <version>1.9.0</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-aop</artifactId>
-      <version>${org.springframework-version}</version>
     </dependency>
 
     <!-- slf4j and log4j -->
@@ -362,14 +351,14 @@ D:\kim\springStudy\study2\pom.xml 설정
       <scope>runtime</scope>
     </dependency>
 
-    <!-- 의존성 주입 라이브러리 -->
+    <!-- 의존성 주입 라이브러리 - @Inject -->
     <dependency>
       <groupId>javax.inject</groupId>
       <artifactId>javax.inject</artifactId>
       <version>1</version>
     </dependency>
 
-    <!-- 서블릿(servlet-api 2.5, jsp-api 2.1, jstl 1.2)-->
+    <!-- 서블릿(servlet-api 2.5, jsp-api 2.1, jstl 1.2) -->
     <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>servlet-api</artifactId>
@@ -388,64 +377,62 @@ D:\kim\springStudy\study2\pom.xml 설정
       <version>1.2</version>
     </dependency>
 
-    <!-- 단위 및 목업 테스트 도구 - junit 4.13 -->
+    <!-- 테스트 도구(junit 4.13, spring-test 5.3.20)   -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.13</version>
       <scope>test</scope>
     </dependency>
-
-    <!-- 스프링 테스트 도구 - spring-test : 스프링mvc 버전과 동일 -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
       <version>${org.springframework-version}</version>
     </dependency>
 
+    <!-- maven build tool(3.2.1) -->
     <dependency>
       <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-war-plugin</artifactId>
-      <version>3.2.0</version>
+      <artifactId>maven-archetype-plugin</artifactId>
+      <version>3.2.1</version>
     </dependency>
 
-    <!-- lombok - 1.18.22 -->
+    <!-- lombok(1.18.22)-->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.22</version>
-      <scope>provided</scope>
     </dependency>
 
-    <!-- DB 접속 로그를 기록하는 라이브러리 - log4jdbc-log4j2-jdbc4 1.16 -->
+    <!-- DB 로그(log4jdbc-log4j2 1.16) -->
     <dependency>
       <groupId>org.bgee.log4jdbc-log4j2</groupId>
-      <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+      <artifactId>log4jdbc-log4j2</artifactId>
       <version>1.16</version>
     </dependency>
 
-    <!-- 스프링 jdbc 라이브러리 - spring-jdbc 스프링mvc 버전과 동일 -->
+    <!-- 스프링 jdbc(5.3.20)-->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
       <version>${org.springframework-version}</version>
     </dependency>
 
-    <!-- 데이터베이스 공용 연결 라이브러리 - commons-dbcp 1.4 -->
+    <!-- DBMS Common Library(1.4) -->
     <dependency>
       <groupId>commons-dbcp</groupId>
       <artifactId>commons-dbcp</artifactId>
       <version>1.4</version>
     </dependency>
 
-    <!-- 마리아 DB 연결 라이브러리 - mariadb-java-client : 마리아DB 버전과 호환되는 것 -->
+    <!-- 마리아DB 연결 라이브러리(3.1.4) -->
     <dependency>
       <groupId>org.mariadb.jdbc</groupId>
       <artifactId>mariadb-java-client</artifactId>
       <version>3.1.4</version>
     </dependency>
 
-    <!-- 스프링 트랜잭션 라이브러리 - spring-tx 스프링mvc 버전과 동일 -->
+    <!-- 스프링 트랜잭션 도구(5.3.20) -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
@@ -465,7 +452,6 @@ D:\kim\springStudy\study2\pom.xml 설정
       <artifactId>mybatis-spring</artifactId>
       <version>1.3.2</version>
     </dependency>
-
 
     <!-- 구글 JSON : gson 2.7 -->
     <dependency>
@@ -819,7 +805,7 @@ D:\kim\springStudy\study2\src\main\resources 디렉토리에서 마우스 오른
 
 ![mappers 디렉토리 생성](./capture/setting09_5.png)
 
-- D:\kim\springStudy\study2\src\main\resources\mappers 디렉토리에서 마우스 오른쪽 버튼 을 누르고 나오는 메뉴에서 [New]-[Directory] 를 선택하고, 입력 란에 testMapper.xml을 입력하고, Enter를 칩니다.
+- D:\kim\springStudy\study2\src\main\resources\mappers 디렉토리에서 마우스 오른쪽 버튼 을 누르고 나오는 메뉴에서 [New]-[File] 을 선택하고, 입력 란에 testMapper.xml을 입력하고, Enter를 칩니다.
 
 ![testMapper.xml 파일 생성](./capture/setting09_51.png)
 
@@ -1165,19 +1151,223 @@ public class Test {
 
 ## 03-1. 데이터베이스 테이블 만들기
 
+### 1) 마리아DB 다운로드 및 설치
+https://mariadb.org/download/?t=mariadb&p=mariadb&r=11.0.3&os=windows&cpu=x86_64&pkg=msi&m=blendbyte
+
+![마리아DB 다운로드](./capture/spring030102.png)
+
+### 2) HeidiSQL 다운로드 및 설치
+https://www.heidisql.com/download.php
+
+![Test 클래스 작성](./capture/spring030101.png)
+
+<br>
+
 ## 03-2. Spring Framework MVC Domain 작성
+
+### 1) domain 패키지 생성
+
+### 2) TestVO.java (클래스) 생성
+
+```java
+package kr.ed.haebeop.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class TestVO {
+    private int num;
+    private String title;
+}
+```
+
+<br>
 
 ## 03-3. Spring Framework MVC Mapper 작성
 
+### 1) testMapper.xml에 새로운 문장 등록
+
+<br>
+
 ## 03-4. Spring Framework MVC Repository 구현
+
+### 1) repository 패키지 생성
+
+### 2) TestRepository.java (인터페이스) 추상체 생성
+
+```java
+package kr.ed.haebeop.repository;
+
+import kr.ed.haebeop.domain.TestVO;
+
+import java.util.List;
+
+public interface TestRepository {
+    public List<TestVO> testList() throws Exception;
+}
+```
+
+### 3) TestRepositoryImpl.java (클래스) 구현체 생성
+
+```java
+package kr.ed.haebeop.repository;
+import kr.ed.haebeop.domain.TestVO;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public class TestRepositoryImpl implements TestRepository {
+
+    @Autowired
+    private SqlSession sqlSession;
+
+    @Override
+    public List<TestVO> testList() throws Exception {
+        return sqlSession.selectList("test.testList");
+    }
+}
+```
+
+<br>
 
 ## 03-5. Spring Framework MVC Service 구현
 
+### 1) service 패키지 생성
+
+### 2) TestService.java (인터페이스) 추상체 생성
+
+```java
+package kr.ed.haebeop.service;
+import kr.ed.haebeop.domain.TestVO;
+import java.util.List;
+
+public interface TestService {
+    public List<TestVO> testList() throws Exception;
+}
+```
+
+### 3) TestServiceImpl.java (클래스) 구현체 생성
+
+```java
+package kr.ed.haebeop.service;
+
+import kr.ed.haebeop.domain.TestVO;
+import kr.ed.haebeop.repository.TestRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class TestServiceImpl implements TestService {
+
+    @Autowired
+    private TestRepository testRepository2;
+
+    @Override
+    public List<TestVO> testList() throws Exception {
+        return testRepository2.testList();
+    }
+}
+```
+
+<br>
+
 ## 03-6. Spring Framework MVC Bean 설정 및 추가
+
+### 1) ApplicationConfig.java에 TestVO에 대한 Repository 및 Service 빈(Bean) 주입 
+
+```java
+package kr.ed.haebeop.config;
+
+import kr.ed.haebeop.repository.TestRepository;
+import kr.ed.haebeop.repository.TestRepositoryImpl;
+import kr.ed.haebeop.service.TestService;
+import kr.ed.haebeop.service.TestServiceImpl;
+import kr.ed.haebeop.test.transaction.TransactionRepository;
+import kr.ed.haebeop.test.transaction.TransactionService;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+
+@Configuration
+@ComponentScan(basePackages = "kr.ed.haebeop")
+public class ApplicationConfig {
+    @Bean
+    public TestService testService3(){
+        return new TestServiceImpl();
+    }
+
+    @Bean
+    public TestRepository testRepository3(){
+        return new TestRepositoryImpl();
+    }
+
+    @Bean
+    public TransactionRepository tranRepository() { return new TransactionRepository(); }
+
+    @Bean
+    public TransactionService tranService() { return new TransactionService(); }
+}
+```
+
+<br>
 
 ## 03-7. Spring Framework MVC View(jsp) 구현
 
+### 1) testLisp.jsp 작성
+
+```jsp
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri = "http://java.sun.com/jsp/jstl/functions"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+<c:forEach var="test" items="${testList}">
+    <p>${test.num}</p>
+    <p>${test.title}</p>
+    <hr>
+</c:forEach>
+</body>
+</html>
+```
+
+<br>
+
 ## 03-8. applicationContext.xml에 Bean을 등록하고, 주입 및 구현하기
+
+```xml
+  ... 중략 ...
+    <!-- 트랜잭션 및 DB 패키지 방안 및 각 종 로깅과 보안 설정 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <context:annotation-config/>
+    <bean id="testService" class="kr.ed.haebeop.service.TestServiceImpl" />
+    <bean id="testRepository" class="kr.ed.haebeop.repository.TestRepositoryImpl" />
+
+    <!-- @Transactional 어노테이션 처리 -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+... 중략 ...    
+```
+
+<br>
 
 ## 03-9. 별도의 GenericXmlApplicationContext.xml에 Bean을 등록하고, 주입 및 구현하기
 
