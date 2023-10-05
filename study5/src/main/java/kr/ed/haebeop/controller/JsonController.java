@@ -7,15 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-// @Controller 대신 @RestController 사용 시 @ResponseBody 어노테이션을 작성해주지 않아도 됨
 @Controller
-@RequestMapping("/json/*")
+@RequestMapping("/json/")
 public class JsonController {
 
     @Autowired
     private TestService testService3;
 
-    // @ResponseBody 어노테이션 사용 시 TestVO 객체가 JSON 형태로 변경됨
+    //GET
     @GetMapping("getTest/{num}")
     @ResponseBody
     public TestVO viewTest(@PathVariable int num) throws Exception {
@@ -28,13 +27,12 @@ public class JsonController {
         return "/test/testInsert";
     }
 
-    // RequestBody => View로부터 데이터를 JSON 형태로 받아오겠다는 의미
-    // ResponseBody => JSON 형태로 View에게 리턴하겠다는 의미
+    //POST
     @PostMapping("insertForm")
-    @ResponseBody
-    public TestVO insertPro(@ModelAttribute TestVO test) throws Exception {     // JAVA 일반 객체로 받는 경우
+    @ResponseBody //@ModelAttribute TestVO test = 일반 객체로 받아오기
+    public TestVO insertPro(@ModelAttribute TestVO test) throws Exception{
         testService3.testInsert(test);
-        return test;
+        return test;        //@RequestParam("num") int num, @RequestParam("title") int title
     }
 
     @GetMapping("insertForm2")
@@ -42,11 +40,11 @@ public class JsonController {
         return "/test/testInsert2";
     }
 
+    //POST
     @PostMapping("insertForm2")
-    @ResponseBody
-    public TestVO insertPro2(@RequestBody TestVO test) throws Exception {       // JSON 객체로 받는 경우
+    @ResponseBody //@RequestBody = json객체으로 값 받아오기
+    public TestVO insertPro2(@RequestBody TestVO test) throws Exception{
         testService3.testInsert(test);
         return test;
     }
-
 }

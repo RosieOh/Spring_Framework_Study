@@ -8,31 +8,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post 방식으로 데이터 값 전송</title>
-    <%--Jquery import --%>
+    <title>Ajax Test6</title>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
 <nav>
+    <h2>06_Post + @ModelAttribute + Object 전송</h2>
+    <hr>
     <ul>
         <li><a href="${path1}/ajax/">Home</a></li>
     </ul>
     <input type="text" name="age" id="age" placeholder="나이 입력" required><br>
-    <input type="text" name="name" placeholder="이름 입력" required> <br>
-    <button id="btn6" type="button" age="26" name="오태훈">Post 전송</button>
+    <input type="text" name="name" id="name" placeholder="이름 입력" required><br>
+    <button id="btn6" type="button">Post 전송</button>
     <script>
-        $(document).ready(function () {
-            $("#btn6").click(function()  {
-                var human = {
-                    "age" : parseInt($("#age").val()),
-                    "name" : $("#name").val()
-                };
+        $(document).ready(function(){
+            $("#btn6").click(function() {
+                var human = {"age":parseInt($("#age").val()), "name":$("#name").val() };
                 $.ajax({
-                    type : "post",
-                    url : "${path1}/ajax/test6pro",
-                    data : human,
-                    success:function(res) { console.log("성공", res) },
-                    error:function(err) { console.log("실패", err) }
+                    type:"post",
+                    url:"${path1}/ajax/test6pro",
+                    data:human,
+                    success:function(res) { console.log("성공", res); },
+                    error:function(err) { console.log("실패", err); }
                 });
             });
         });
