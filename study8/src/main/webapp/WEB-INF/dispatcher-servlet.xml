@@ -14,6 +14,7 @@
     <resources mapping="/data/**" location="/data/" />
     <resources mapping="/admin/**" location="/WEB-INF/views/admin" />
     <resources mapping="/board/**" location="/WEB-INF/views/board" />
+    <resources mapping="/calendar/**" location="/WEB-INF/views/calendar" />
     <resources mapping="/check/**" location="/WEB-INF/views/check" />
     <resources mapping="/fileupload/**" location="/WEB-INF/views/fileupload" />
     <resources mapping="/guestbook/**" location="/WEB-INF/views/guestbook" />
@@ -84,11 +85,14 @@
             <beans:property name="paramName" value="language"/>
         </beans:bean>
     </interceptors>
+
     <beans:bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
         <beans:property name="defaultLocale" value="ko"/>
     </beans:bean>
+
     <beans:bean id= "messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <beans:property name="basename" value="messages"/><!-- resources/messages_ko.properties -->
         <beans:property name="defaultEncoding" value="UTF-8" /><!-- resources/messages_en.properties -->
     </beans:bean>
+
 </beans:beans>

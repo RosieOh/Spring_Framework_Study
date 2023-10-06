@@ -11,11 +11,16 @@ import kr.ed.haebeop.test.CheckVO;
 import kr.ed.haebeop.test.transaction.TransactionRepository;
 import kr.ed.haebeop.test.transaction.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.context.MessageSourceResolvable;
+import org.springframework.context.NoSuchMessageException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+
+import java.util.Locale;
 
 @Configuration
 @ComponentScan(basePackages = "kr.ed.haebeop")

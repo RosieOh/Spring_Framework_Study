@@ -84,16 +84,11 @@
             $(document).ready(function(){
                 $("#upBtn").click(function(){
                     let formData = new FormData();
-                    var inputFile = $("input[name='file']");
-                    var files = inputFile[0].files;
-                    for(var i=0; i<files.length;i++){
-                        console.log(files[i]);
-                        formData.append("file", files[i]);
-                    }
+                    formData.append('file', $('#file')[0].files);
                     $.ajax({
                         type : "POST",
                         enctype : "multipart/form-data",
-                        url : "${path1}/fileupload/fileUpload4",
+                        url : "fileUpload3",
                         cache : false,
                         contentType : false,
                         processData : false,
@@ -111,19 +106,7 @@
 
     </div>
     <!-- end of Container -->
-        <div class="col s6">
-            <a class="btn-large waves-effect waves-light" href="${path1}/fileupload/deleteFileView">
-                <i class="material-icons left">delete</i>
-                파일 삭제
-            </a>
-        </div>
 
-        <div class="col s6">
-            <a class="btn-large waves-effect waves-light" href="${path1}/fileupload/getFileList">
-                <i class="material-icons left">list</i>
-                파일 목록 보기
-            </a>
-        </div>
 
     <!-- Footer -->
 
