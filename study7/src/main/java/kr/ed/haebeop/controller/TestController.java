@@ -17,11 +17,11 @@ import java.util.Locale;
 @RequestMapping("/test/")
 public class TestController {
     @Autowired
-    private TestService testService2;
+    private TestService testService3;
 
     @GetMapping("testList")
     public String getTestList(Model model) throws Exception {
-        List<TestVO> testList = testService2.testList();
+        List<TestVO> testList = testService3.testList();
         model.addAttribute("testList", testList);
         return "/test/testList";
     }

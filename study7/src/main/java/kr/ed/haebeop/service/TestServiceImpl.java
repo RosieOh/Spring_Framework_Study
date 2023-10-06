@@ -11,20 +11,20 @@ import java.util.List;
 public class TestServiceImpl implements TestService {
 
     @Autowired
-    private TestRepository testRepository2;
+    private TestRepository testRepository3;
 
     @Override
     public List<TestVO> testList() throws Exception {
-        return testRepository2.testList();
+        return testRepository3.testList();
     }
 
     @Override
     public TestVO getTest(int num) throws Exception {
-        return testRepository2.getTest(num);
+        return testRepository3.getTest(num);
     }
 
     @Override
     public void testInsert(TestVO test) throws Exception {
-        testRepository2.testInsert(test);
+        testRepository3.testInsert(test);
     }
 }

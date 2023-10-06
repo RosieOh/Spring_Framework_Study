@@ -1,5 +1,4 @@
 package kr.ed.haebeop.controller;
-import com.google.inject.Inject;
 import kr.ed.haebeop.domain.User;
 import kr.ed.haebeop.service.UserService;
 import org.json.JSONObject;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
