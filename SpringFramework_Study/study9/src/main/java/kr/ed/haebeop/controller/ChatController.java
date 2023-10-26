@@ -1,15 +1,14 @@
 package kr.ed.haebeop.controller;
 
-import kr.ed.haebeop.domain.ChatRoom;
-import kr.ed.haebeop.service.ChatService;
+import kr.ed.haebeop.domain.ChatDTO;
+import org.springframework.stereotype.Controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import kr.ed.haebeop.domain.ChatRoom;
+import kr.ed.haebeop.service.ChatService;
+import org.springframework.web.socket.WebSocketSession;
 
 import java.util.List;
 
@@ -19,21 +18,16 @@ import java.util.List;
 @RequestMapping("/chat/")
 public class ChatController {
 
-    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
-
-    @Autowired
     private final ChatService service;
 
     @GetMapping("home")
     public String loadHome(Model model){
-        // return "/chat/home"; // 내가 만든거
-        return "/chat/chat"; // 강사님이 만든거
+        return "/chat/chat";
     }
 
     @PostMapping("createRoom")
     @ResponseBody
     public ChatRoom createRoom(@RequestParam String name){
-        logger.info("createRoom Start");
         return service.createRoom(name);
     }
 
@@ -42,5 +36,13 @@ public class ChatController {
     public List<ChatRoom> findAllRooms(){
         return service.findAllRoom();
     }
-    
+
+    @GetMapping("getRoom")
+    @ResponseBody
+    public ChatRoom getRoom(@RequestParam String roomId) { return service.findRoomById(roomId); }
+
+    @GetMapping("sendMsg")
+    public void sendMsg(@RequestParam WebSocketSession session, @RequestParam String message) { service.sendMessage(session, message); }
+
+
 }

@@ -72,7 +72,7 @@ public class FileUploadController {
     @PostMapping("/fileupload/fileUpload2")
     public String upload1(MultipartHttpServletRequest multipartRequest) throws ServletException, IOException {
         List<MultipartFile> fileList = multipartRequest.getFiles("file");
-        String uploadPath = "D:/oth/spring/springframework/study7/src/main/webapp/resources/upload";
+        String uploadPath = "d:/kim/springStudy/study7/src/main/webapp/resources/upload";
         log.info("파일 개수 :"+fileList.size());
         for (MultipartFile multipartFile : fileList) {
             if (multipartFile.isEmpty()) { continue; }

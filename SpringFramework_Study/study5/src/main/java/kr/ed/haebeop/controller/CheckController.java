@@ -75,8 +75,13 @@ public class CheckController {
     }
 
     //하나의 컨트롤러에서는 오로지 하나의 Vailidator만을 쓸 수 밖에 없다는 단점이 있음
-    @InitBinder
+    @InitBinder("check")
     protected void initBinder(WebDataBinder binder){
+        binder.setValidator(new CheckValidator());
+    }
+
+    @InitBinder("chk")
+    protected void initBinder2(WebDataBinder binder){
         binder.setValidator(new CheckValidator2());
     }
 
